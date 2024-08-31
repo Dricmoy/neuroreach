@@ -13,7 +13,7 @@ export default function Join() {
         <section className="w-full max-w-3xl py-8 bg-white shadow-md rounded-lg mb-10 p-6">
           <h2 className="text-2xl font-semibold mb-4 text-green-700">Membership Benefits</h2>
           <p className="text-gray-600 mb-4">
-            As a member, you'll have access to exclusive events, networking opportunities, and more.
+            As a member, you&apos;ll have access to exclusive events, networking opportunities, and more.
           </p>
           <h3 className="text-xl font-semibold mt-6 text-green-700">How to Join</h3>
           <p className="text-gray-600">
