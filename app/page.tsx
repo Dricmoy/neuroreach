@@ -1,5 +1,6 @@
 'use client';
 
+import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
 import { Carousel } from 'react-responsive-carousel';
@@ -14,7 +15,10 @@ export default function Home() {
 
   return (
     <main className="flex flex-col min-h-screen items-center justify-center px-6 md:px-12 lg:px-24 bg-gradient-to-b from-green-50 to-green-100 text-gray-800">
-      
+      <div className='mb-10 mt-6 w-full'>
+        <Navbar/>  
+      </div>
+
       {/* Hero Section */}
       <section className="w-full max-w-4xl py-12 text-center mb-12 bg-white shadow-md rounded-lg p-8">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-green-700 mb-4 tracking-tight">
@@ -129,23 +133,6 @@ export default function Home() {
 
       <footer className="w-full max-w-3xl text-center py-6 mt-auto border-t border-gray-200">
         <p className="text-sm text-gray-500">&copy; 2024 Neuroreach. All rights reserved.</p>
-        <nav className="mt-4 flex justify-center space-x-6">
-          <Link href="/opportunities">
-            <span className="text-green-600 hover:text-green-500 font-medium transition-colors cursor-pointer">
-              Opportunities
-            </span>
-          </Link>
-          <Link href="/about">
-            <span className="text-green-600 hover:text-green-500 font-medium transition-colors cursor-pointer">
-              About Us
-            </span>
-          </Link>
-          <Link href="/contact">
-            <span className="text-green-600 hover:text-green-500 font-medium transition-colors cursor-pointer">
-              Contact
-            </span>
-          </Link>
-        </nav>
       </footer>
     </main>
   );
