@@ -1,31 +1,42 @@
-// components/Navbar.tsx
-
 import Link from 'next/link';
+import { FaBrain } from 'react-icons/fa'; // Example SVG icon
 
-const Navbar = () => {
+interface NavbarProps {
+  fontFamily?: string; // Font family to be applied
+  textColor?: string; // Color for the text
+  hoverColor?: string; // Color for the hover effect
+}
+
+const Navbar = ({
+  fontFamily = 'sans-serif',
+  textColor = 'text-purple-800',
+  hoverColor = 'hover:text-gray-600 hover:',
+}: NavbarProps) => {
   return (
-    <nav className="bg-white bg-opacity-70 backdrop-blur-lg shadow-lg rounded-lg py-4">
-      <div className="container mx-auto flex justify-between items-center px-6">
-        <div className="text-purple-700 text-2xl font-bold">
-          <Link href="/">Neuroreach</Link>
-        </div>
-        <div className="flex space-x-6">
-          <Link href="/about" className="text-purple-600 hover:text-purple-500 font-medium transition-colors rounded-md p-2 hover:bg-purple-100">
-            About
-          </Link>
-          <Link href="/ask" className="text-purple-600 hover:text-purple-500 font-medium transition-colors rounded-md p-2 hover:bg-purple-100">
-            Ask
-          </Link>
-          <Link href="/events" className="text-purple-600 hover:text-purple-500 font-medium transition-colors rounded-md p-2 hover:bg-purple-100">
-            Events
-          </Link>
-          <Link href="/join" className="text-purple-600 hover:text-purple-500 font-medium transition-colors rounded-md p-2 hover:bg-purple-100">
-            Join
-          </Link>
-          <Link href="/opportunities" className="text-purple-600 hover:text-purple-500 font-medium transition-colors rounded-md p-2 hover:bg-purple-100">
-            Opportunities
-          </Link>
-        </div>
+    <nav className="fixed top-0 left-0 w-full py-4 px-6 flex items-center z-50">
+      {/* Logo */}
+      <div className="flex items-center">
+        <FaBrain className="text-3xl" />
+        <span className={`text-3xl font-bold ml-3 ${fontFamily}`}>Neuroreach</span>
+      </div>
+
+      {/* Navigation Links */}
+      <div className="ml-auto flex space-x-8">
+        <Link href="/about">
+          <span className={`text-lg font-semibold transition-colors ${textColor} ${hoverColor}`}>About</span>
+        </Link>
+        <Link href="/ask">
+          <span className={`text-lg font-semibold transition-colors ${textColor} ${hoverColor}`}>Ask</span>
+        </Link>
+        <Link href="/events">
+          <span className={`text-lg font-semibold transition-colors ${textColor} ${hoverColor}`}>Event</span>
+        </Link>
+        <Link href="/join">
+          <span className={`text-lg font-semibold transition-colors ${textColor} ${hoverColor}`}>Join</span>
+        </Link>
+        <Link href="/opportunities">
+          <span className={`text-lg font-semibold transition-colors ${textColor} ${hoverColor}`}>Opportunities</span>
+        </Link>
       </div>
     </nav>
   );
