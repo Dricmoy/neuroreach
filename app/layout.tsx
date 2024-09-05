@@ -8,7 +8,7 @@ const eczar = Eczar({ subsets: ["latin"], weight: ["400", "700", "800"] }); // D
 
 export const metadata: Metadata = {
   title: "Neuroreach",
-  description: "Prototyping stage",
+  description: "Welcoming all Neurology lovers",
 };
 
 export default function RootLayout({
@@ -18,6 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="icon" href="/favicon.ico" sizes="any"/>
       <body className={`${inter.className} ${eczar.className}`}>{children}</body>
     </html>
   );

@@ -1,5 +1,6 @@
+'use client'
+import Image from 'next/image';
 import Link from 'next/link';
-import { FaBrain } from 'react-icons/fa'; // Example SVG icon
 
 interface NavbarProps {
   fontFamily?: string; // Font family to be applied
@@ -8,36 +9,69 @@ interface NavbarProps {
 }
 
 const Navbar = ({
-  fontFamily = 'sans-serif',
-  textColor = 'text-purple-800',
-  hoverColor = 'hover:text-gray-600 hover:',
+  fontFamily = '',
+  textColor = 'text-gray-800',
+  hoverColor = 'hover:text-blue-500',
 }: NavbarProps) => {
   return (
-    <nav className="fixed top-0 left-0 w-full py-4 px-6 flex items-center z-50">
-      {/* Logo */}
-      <div className="flex items-center">
-        <FaBrain className="text-3xl" />
-        <span className={`text-3xl font-bold ml-3 ${fontFamily}`}>Neuroreach</span>
+    <nav className="fixed top-0 left-0 w-full py-4 px-10 flex items-center justify-between z-50 backdrop-blur-lg bg-white/30 border border-white/20 rounded-lg shadow-lg">
+      {/* Left Navigation Links */}
+      <div className="flex items-center space-x-6 lg:space-x-4 lg:ml-[20rem]">
+        {['About', 'Ask'].map((item, index) => (
+          <Link key={index} href={`/${item.toLowerCase()}`}>
+            <span
+              className={`relative text-xl font-extrabold text-purple-800 ml-2 tracking-tight hover:text-purple-600 transition duration-300 ${textColor} ${hoverColor} underline-animation`}
+              style={{ fontFamily }}
+            >
+              {item}
+            </span>
+          </Link>
+        ))}
       </div>
 
-      {/* Navigation Links */}
-      <div className="ml-auto flex space-x-8">
-        <Link href="/about">
-          <span className={`text-lg font-semibold transition-colors ${textColor} ${hoverColor}`}>About</span>
-        </Link>
-        <Link href="/ask">
-          <span className={`text-lg font-semibold transition-colors ${textColor} ${hoverColor}`}>Ask</span>
-        </Link>
-        <Link href="/events">
-          <span className={`text-lg font-semibold transition-colors ${textColor} ${hoverColor}`}>Event</span>
-        </Link>
-        <Link href="/join">
-          <span className={`text-lg font-semibold transition-colors ${textColor} ${hoverColor}`}>Join</span>
-        </Link>
-        <Link href="/opportunities">
-          <span className={`text-lg font-semibold transition-colors ${textColor} ${hoverColor}`}>Opportunities</span>
-        </Link>
+      {/* Centered Logo */}
+      <div className="flex-shrink-0">
+        <Image
+          src='/logo.svg'
+          height={80}
+          width={80}
+          alt='Neuroreach logo'
+          className="rounded-full border-4 bg-white border-white cursor-pointer hover:scale-110 shadow-md"
+        />
+        <span>Neuroreach</span>
       </div>
+
+      {/* Right Navigation Links */}
+      <div className="flex items-center space-x-6 lg:mr-[20rem] lg:space-x-4">
+        {['Events', 'Join US'].map((item, index) => (
+          <Link key={index} href={`/${item.toLowerCase().replace(/\s+/g, '-')}`}>
+            <span
+              className={`relative text-xl font-extrabold text-purple-800 ml-2 tracking-tight hover:text-purple-600 transition duration-300 ${textColor} ${hoverColor} underline-animation`}
+              style={{ fontFamily }}
+            >
+              {item}
+            </span>
+          </Link>
+        ))}
+      </div>
+
+      <style jsx>{`
+        .underline-animation::after {
+          content: '';
+          display: block;
+          height: 2px;
+          background-color: currentColor; /* Use the current text color */
+          position: absolute;
+          left: 0;
+          bottom: -2px; /* Adjust if needed */
+          width: 0;
+          transition: width 0.3s ease, left 0.3s ease;
+        }
+        .underline-animation:hover::after {
+          width: 100%;
+          left: 0;
+        }
+      `}</style>
     </nav>
   );
 };
