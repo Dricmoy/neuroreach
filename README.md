@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# Neuroreach
+
+**Neuroreach** is a platform that connects students and professionals in the field of neuroscience. Through events, resources, and networking opportunities, we aim to foster collaboration, knowledge sharing, and career development within the neuroscience community.
+
+## Features
+
+- **Neuroscience Networking**: Connect with both students and professionals who share a passion for neuroscience.
+- **Events and Workshops**: Stay informed and participate in neuroscience-focused events, seminars, and workshops.
+- **Resource Sharing**: Access a wide array of neuroscience-related materials, from research articles to career guidance.
+- **FAQ Section**: Get answers to frequently asked questions about Neuroreach, its events, and how to get involved.
+- **Google Calendar Integration**: Stay up to date with our upcoming events through direct integration with Google Calendar.
+- **Join Us Carousel**: Learn about the exciting opportunities available when you become part of our community.
+- **Submit Questions**: Ask questions to experienced neuroscience students through our "Ask a Neuroscience Student" feature.
+
+## Technology Stack
+
+- **Next.js**: For server-side rendering and frontend development.
+- **React.js**: To create dynamic user interfaces.
+- **Tailwind CSS**: For responsive and modern styling.
+- **Google Calendar API**: To display upcoming events.
+- **React-Responsive-Carousel**: For showcasing the Join Us section.
+- **TypeScript**: For type-safe development.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Before you begin, ensure you have met the following requirements:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node.js installed on your machine.
+- A Google Calendar ID and Timezone for integrating the calendar (optional).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/neuroreach.git
+   ```
+   
+2. Navigate to the project directory:
+   ```bash
+   cd neuroreach
+   ```
 
-## Learn More
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Create a `.env.local` file and add your Google Calendar ID and Timezone (optional):
+   ```bash
+   GOOGLE_CALENDAR_ID=your_calendar_id
+   TIMEZONE=your_timezone
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+6. Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+We welcome contributions from the community! To get started:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Make your changes.
+4. Ensure the project builds and passes any existing tests.
+5. Commit your changes and push to your forked repository:
+   ```bash
+   git commit -m "Description of changes"
+   git push origin feature-name
+   ```
+6. Submit a pull request and describe the changes you've made.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+If you have any questions or want to get involved, feel free to reach out via our [website](https://neuroreach.com) or email us at contact@neuroreach.com.
