@@ -78,6 +78,7 @@ We welcome contributions from the community! To get started:
    git push origin feature-name
    ```
 6. Submit a pull request and describe the changes you've made.
+ a
 
 ## License
 
